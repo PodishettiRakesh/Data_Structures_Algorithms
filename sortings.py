@@ -9,6 +9,32 @@ def mergeSort(arr,l,r):
     mergeSort(arr,mid+1,r)
     merge(arr,l,r,mid)
 
+def merge(array,l,r,mid):
+    leftArray=array[l:mid+1]
+    rightArray=array[mid+1,r+1]
+    print(f"left array {leftArray}  right array  {rightArray}")
+    i=0
+    j=0
+    r=0
+    ans=[]
 
+    while i<len(leftArray) and j<len(rightArray):
+        if leftArray[i]<= rightArray[j]:
+            ans[r]=leftArray[i]
+            i+=1
+        else:
+            ans[r]=rightArray[j]
+            j+=1
+        r+=1
 
-mergeSort(x,l,r)
+    while i<len(leftArray):
+        ans[r]=leftArray[i]
+        i+=1
+        r+=1
+    
+    while j<len(rightArray):
+        ans[r]=rightArray[j]
+        j+=1
+        r+=1
+    return ans
+print(mergeSort(x,l,r))
