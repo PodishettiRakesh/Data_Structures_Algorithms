@@ -37,4 +37,23 @@ def merge(array,l,mid,r):
         ans[r]=rightArray[j]
         j+=1
         r+=1
-print(mergeSort(x,l,r))
+# print(mergeSort(x,l,r))
+
+def bubbleSort(arr):
+    for i in range(len(arr)):
+        swaps=0
+        for j in range(1,len(arr)-i):
+            if arr[j]< arr[j-1]:
+                temp=arr[j]
+                arr[j]=arr[j-1]
+                arr[j-1]=temp
+                swaps+=1
+        if swaps==0:
+            return arr
+        
+    return arr
+y=[12,11,10,9,8]
+z=[-23,11,8,8,9,0,-22]
+print(bubbleSort(x))
+print(bubbleSort(y))
+print(bubbleSort(z))
