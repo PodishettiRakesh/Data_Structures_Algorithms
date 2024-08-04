@@ -62,7 +62,6 @@ def moveZerosToEnd(arr):
             arr[i],arr[j]=arr[j],arr[i]
             j+=1
     
-
 x=[1,0,2,0,3,4,0]
 moveZerosToEnd(x)
 print(x)
