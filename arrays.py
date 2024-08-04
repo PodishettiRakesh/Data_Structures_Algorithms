@@ -27,14 +27,29 @@ def rotate_Left(arr,n):
             arr[left],arr[right]=arr[right],arr[left]
             left+=1
             right-=1
-            
+
     reverse(arr,0,n-1)
     # print(arr)
     reverse(arr,n,size-1)
     reverse(arr,0,size-1)
 
-x=[1,2,3,4,5,6,7]
+# x=[1,2,3,4,5,6,7]
+# print(x)
+# n=4
+# rotate_Left(x,n)
+# print(x)
+
+
+def moveZerosToEnd(arr):
+    temp=[]
+    for i in range(len(arr)):
+        if arr[i]!=0:
+            temp.append(arr[i])
+    for i in range(len(temp)):
+        arr[i]=temp[i]
+    for i in range(len(temp), len(arr)):
+        arr[i]=0
+x=[1,0,2,0,3,4,0]
+moveZerosToEnd(x)
 print(x)
-n=4
-rotate_Left(x,n)
-print(x)
+
