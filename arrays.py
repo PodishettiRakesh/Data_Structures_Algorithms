@@ -22,11 +22,19 @@ def rotate_Left(arr,n):
     n=n%size
 
     def reverse(arr,left, right):
-        while left>=right:
+        print("array",arr[left:right])
+        while left<=right:
             arr[left],arr[right]=arr[right],arr[left]
             left+=1
             right-=1
+            
+    reverse(arr,0,n-1)
+    # print(arr)
+    reverse(arr,n,size-1)
+    reverse(arr,0,size-1)
 
-    reverse(arr,0,n)
-    reverse(arr,n+1,size)
-    reverse(arr,0,size)
+x=[1,2,3,4,5,6,7]
+print(x)
+n=4
+rotate_Left(x,n)
+print(x)
