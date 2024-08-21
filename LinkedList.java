@@ -18,7 +18,7 @@ public class LinkedList{
         }
 
         node current= head;
-        while(head.next!=null){
+        while(current.next!=null){
             current=current.next;
         }
         node nextNode=new node(data);
@@ -31,18 +31,31 @@ public class LinkedList{
             System.out.println("no nodes present in list");
             return;
         }
-        while(current.next!=null){
-            System.out.println(current.data);
+        while(current!=null){
+            System.out.print(current.data+"->");
             current=current.next;
         }
-        System.out.print(current.next);
+        System.out.println(current);
 
+    }
+
+
+    public void insertBeginning(int data){
+        node newNode=new node(data);
+        if(head==null){
+            head=newNode;
+        }
+        newNode.next=head;
+        head=newNode;
     }
 
     public static void main(String[] args){
         LinkedList obj= new LinkedList();
         obj.append(3);
         obj.append(5);
+        obj.append(6);
+        obj.displayList();
+        obj.insertBeginning(1);
         obj.displayList();
         
     }
