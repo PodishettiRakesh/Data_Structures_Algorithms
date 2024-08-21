@@ -49,6 +49,19 @@ public class LinkedList{
         head=newNode;
     }
 
+    public void insertEnd(int data){
+        if(head==null){
+            head=new node(data);
+        }
+
+        node newNode = new node(data);
+        node current=head;
+        while(current.next!=null){
+            current=current.next;
+        }
+        current.next=newNode;
+    }
+
     public static void main(String[] args){
         LinkedList obj= new LinkedList();
         obj.append(3);
@@ -57,7 +70,9 @@ public class LinkedList{
         obj.displayList();
         obj.insertBeginning(1);
         obj.displayList();
-        
+        obj.insertBeginning(1);
+        obj.insertEnd(1);
+        obj.displayList();
     }
 
     
