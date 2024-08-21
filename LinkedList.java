@@ -25,8 +25,25 @@ public class LinkedList{
         current.next=nextNode;
     }
 
+    public void displayList(){
+        node current=head;
+        if(head==null){
+            System.out.println("no nodes present in list");
+            return;
+        }
+        while(current.next!=null){
+            System.out.println(current.data);
+            current=current.next;
+        }
+        System.out.print(current.next);
+
+    }
+
     public static void main(String[] args){
         LinkedList obj= new LinkedList();
+        obj.append(3);
+        obj.append(5);
+        obj.displayList();
         
     }
 
