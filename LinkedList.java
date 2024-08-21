@@ -11,5 +11,24 @@ public class LinkedList{
         }
     }
 
+    public void append(int data){
+        if(head==null){
+            head=new node(data);
+            return;
+        }
+
+        node current= head;
+        while(head.next!=null){
+            current=current.next;
+        }
+        node nextNode=new node(data);
+        current.next=nextNode;
+    }
+
+    public static void main(String[] args){
+        LinkedList obj= new LinkedList();
+        
+    }
+
     
 }
