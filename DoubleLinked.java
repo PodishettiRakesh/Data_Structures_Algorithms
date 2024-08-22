@@ -7,6 +7,7 @@ public class DoubleLinked {
         node next;
 
         node(int data){
+            this.data=data;
             this.prev=null;
             this.next=null;
         }
@@ -15,6 +16,7 @@ public class DoubleLinked {
     public void append(int data){
         if(head==null){
             head=new node(data);
+            return;
         }
 
         node current=head;
@@ -30,13 +32,40 @@ public class DoubleLinked {
         node current=head;
         while(current!=null){
             System.out.print(current.data+"->");
+            
             current=current.next;
         }
-        
+        System.out.println();
+
+    }
+
+    public void reverseList(){
+        // if(head==null || head.next==null){
+        //     return;
+        // }
+
+        node current=head;
+        node temp=null;
+        while(current!=null){
+            temp=current.prev;
+            current.prev=current.next;
+            current.next=temp;
+            current=current.prev;
+        }
+
+        if (temp != null) {
+            head = temp.prev;
+        }
     }
 
     public static void main(String[] args) {
         DoubleLinked obj=new DoubleLinked();
+        obj.append(1);
+        obj.append(2);
+        obj.append(3);
+        obj.dispalyElements();
+        obj.reverseList();
+        obj.dispalyElements();
         
     }
 }
