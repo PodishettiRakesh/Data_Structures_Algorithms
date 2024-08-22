@@ -52,6 +52,7 @@ public class LinkedList{
     public void insertEnd(int data){
         if(head==null){
             head=new node(data);
+            return;
         }
 
         node newNode = new node(data);
@@ -62,17 +63,30 @@ public class LinkedList{
         current.next=newNode;
     }
 
+    public node reverseList(){
+        node current = head;
+        node previous=null;
+        node next = null;
+        while(current!=null){
+            next=current.next;
+            current.next=previous;
+            previous=current;
+            current=next;
+        }
+        return previous;
+        
+
+    }
+
     public static void main(String[] args){
         LinkedList obj= new LinkedList();
         obj.append(3);
         obj.append(5);
         obj.append(6);
         obj.displayList();
-        obj.insertBeginning(1);
+        obj.reverseList();
         obj.displayList();
-        obj.insertBeginning(1);
-        obj.insertEnd(1);
-        obj.displayList();
+        
     }
 
     
