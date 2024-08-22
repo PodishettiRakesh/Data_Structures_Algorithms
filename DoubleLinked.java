@@ -26,6 +26,15 @@ public class DoubleLinked {
         newNode.prev=current;
     }
 
+    public void dispalyElements(){
+        node current=head;
+        while(current!=null){
+            System.out.print(current.data+"->");
+            current=current.next;
+        }
+        
+    }
+
     public static void main(String[] args) {
         DoubleLinked obj=new DoubleLinked();
         
