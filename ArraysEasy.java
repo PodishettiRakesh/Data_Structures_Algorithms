@@ -33,9 +33,10 @@ public class ArraysEasy {
             return -1;
         }else{
             return secondSmall;
-        }
-        
+        } 
     }
+
+    
     public static void main(String[] args) {
         int[] arr={11,12,23,14,45,34};
         ArraysEasy obj= new ArraysEasy();
