@@ -45,9 +45,10 @@ public class ArraysEasy {
         return true;
     }
     public static void main(String[] args) {
-        int[] arr={11,12,23,14,45,34};
+        int[] arr={11,12,23,45};
         ArraysEasy obj= new ArraysEasy();
-        System.out.println(obj.findSecondLargest(arr));
-        System.out.println(obj.findSecondSmallest(arr));
+        // System.out.println(obj.findSecondLargest(arr));
+        // System.out.println(obj.findSecondSmallest(arr));
+        System.out.println(obj.isSorted(arr));
     }
 }
