@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArraysEasy {
 
     public int findSecondLargest(int[] arr){
@@ -70,15 +72,19 @@ public class ArraysEasy {
 
     public int[] rotateRight(int arr[], int k){
         int[] newArray= new int[arr.length];
+    
         int j=0;
         for(int i=arr.length-k; i<arr.length; i++){
             newArray[j]=arr[i];
             j++;
         }
-
-        for(int i=0; i<k; i++){
+        
+        for(int i=0; i<arr.length-k; i++){
             newArray[j]=arr[i];
+            j++;
         }
+
+        System.out.println(Arrays.toString(newArray));
         return newArray;
     }
 
@@ -86,6 +92,8 @@ public class ArraysEasy {
         int[] arr={1,2,2,3,3,4,7,7};
         ArraysEasy obj= new ArraysEasy();
         System.out.println(obj.removeDuplicatesInSorted(arr));
+        int[] res=obj.rotateRight(arr, 2);
+        System.out.println(res);
     }
 
 }
