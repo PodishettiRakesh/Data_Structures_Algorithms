@@ -36,7 +36,9 @@ public class ArraysEasy {
         } 
     }
 
-    
+    public boolean isSorted(int arr[]){
+        
+    }
     public static void main(String[] args) {
         int[] arr={11,12,23,14,45,34};
         ArraysEasy obj= new ArraysEasy();
