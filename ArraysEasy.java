@@ -69,7 +69,17 @@ public class ArraysEasy {
     }
 
     public int[] rotateRight(int arr[], int k){
-        
+        int[] newArray= new int[arr.length];
+        int j=0;
+        for(int i=arr.length-k; i<arr.length; i++){
+            newArray[j]=arr[i];
+            j++;
+        }
+
+        for(int i=0; i<k; i++){
+            newArray[j]=arr[i];
+        }
+        return newArray;
     }
 
     public static void main(String[] args) {
