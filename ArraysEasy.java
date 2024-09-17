@@ -100,19 +100,21 @@ public class ArraysEasy {
         reverseArray(arr, 0, arr.length-k-1);
         reverseArray(arr,arr.length-k,arr.length-1);
         reverseArray(arr,0, arr.length-1);
-        System.out.println(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
-    
 
+    public void rotateLeft(int arr[], int k){
+        reverseArray(arr, k, arr.length-1);
+        reverseArray(arr, 0, k-1);
+        reverseArray(arr, 0, arr.length-1);
+        System.out.println(Arrays.toString(arr));
+    }
     public static void main(String[] args) {
         int[] arr={1,2,2,3,3,4,7,7};
         ArraysEasy obj= new ArraysEasy();
-        System.out.println(obj.removeDuplicatesInSorted(arr));
-        int[] res=obj.rotateRight(arr, 2);
-        System.out.println(res);
+        obj.rotateRightInPlace(arr, 4);
+        obj.rotateLeft(arr, 4);
+
     }
-
-
-
 }
