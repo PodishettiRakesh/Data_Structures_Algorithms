@@ -61,19 +61,17 @@ public class ArraysEasy {
         for(int j=1; j<arr.length; j++){
             if(arr[i]!=arr[j]){
                 arr[i+1]=arr[j];
+                i++;
             }
-            i++;
+            
         }
         return i+1;
     }
 
     public static void main(String[] args) {
-        int[] arr={3,4,1,2};
+        int[] arr={1,2,2,3,3,4,7,7};
         ArraysEasy obj= new ArraysEasy();
-        // System.out.println(obj.findSecondLargest(arr));
-        // System.out.println(obj.findSecondSmallest(arr));
-        System.out.println(obj.isSorted(arr));
-        System.out.println(obj.isSortedAndRotated(arr));
+        System.out.println(obj.removeDuplicatesInSorted(arr));
     }
 
 }
