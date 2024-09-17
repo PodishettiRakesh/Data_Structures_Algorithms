@@ -37,40 +37,24 @@ public class ArraysEasy {
     }
 
     public boolean isSorted(int arr[]){
-        // for(int i=1; i<arr.length; i++){
-        //     if(arr[i]<arr[i-1]){
-        //         return false;
-        //     }
-        // }
-        // return true;
-
-        int breakPoint=0;
-        for(int i =0; i<arr.length-1; i++){
-            if(arr[i+1]<arr[i]){
-                breakPoint=i+1;
-            }
-        }
-
-        for(int i=1; i<breakPoint;i++){
-            if(arr[i]<arr[i-1]){
-                return false;
-            }
-        }
-        for(int i=breakPoint+1; i<arr.length;i++){
+        for(int i=1; i<arr.length; i++){
             if(arr[i]<arr[i-1]){
                 return false;
             }
         }
         return true;
-
     }
 
-    
+    public boolean isSortedAndRotated(int arr[]){
+        
+    }
+
     public static void main(String[] args) {
-        int[] arr={23,45,11,12,15,9};
+        int[] arr={2,1,3,4};
         ArraysEasy obj= new ArraysEasy();
         // System.out.println(obj.findSecondLargest(arr));
         // System.out.println(obj.findSecondSmallest(arr));
         System.out.println(obj.isSorted(arr));
     }
+
 }
