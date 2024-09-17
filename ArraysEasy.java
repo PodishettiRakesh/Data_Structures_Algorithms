@@ -72,21 +72,25 @@ public class ArraysEasy {
 
     public int[] rotateRight(int arr[], int k){
         int[] newArray= new int[arr.length];
-    
         int j=0;
         for(int i=arr.length-k; i<arr.length; i++){
             newArray[j]=arr[i];
             j++;
         }
-        
         for(int i=0; i<arr.length-k; i++){
             newArray[j]=arr[i];
             j++;
         }
-
         System.out.println(Arrays.toString(newArray));
         return newArray;
     }
+
+
+    public void rotateRightInPlace(int arr[], int k){
+        pu
+    }
+
+    
 
     public static void main(String[] args) {
         int[] arr={1,2,2,3,3,4,7,7};
@@ -95,5 +99,7 @@ public class ArraysEasy {
         int[] res=obj.rotateRight(arr, 2);
         System.out.println(res);
     }
+
+
 
 }
