@@ -46,15 +46,27 @@ public class ArraysEasy {
     }
 
     public boolean isSortedAndRotated(int arr[]){
-        
+        int breakPoint=0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>arr[(i+1)%arr.length]){
+                breakPoint+=1;
+            }
+        }
+
+        return breakPoint<=1;
+    }
+
+    public int removeDuplicatesInSorted(int arr[]){
+
     }
 
     public static void main(String[] args) {
-        int[] arr={2,1,3,4};
+        int[] arr={3,4,1,2};
         ArraysEasy obj= new ArraysEasy();
         // System.out.println(obj.findSecondLargest(arr));
         // System.out.println(obj.findSecondSmallest(arr));
         System.out.println(obj.isSorted(arr));
+        System.out.println(obj.isSortedAndRotated(arr));
     }
 
 }
