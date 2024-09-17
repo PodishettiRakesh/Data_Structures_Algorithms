@@ -68,6 +68,10 @@ public class ArraysEasy {
         return i+1;
     }
 
+    public int[] rotateRight(int arr[], int k){
+        
+    }
+
     public static void main(String[] args) {
         int[] arr={1,2,2,3,3,4,7,7};
         ArraysEasy obj= new ArraysEasy();
