@@ -85,9 +85,22 @@ public class ArraysEasy {
         return newArray;
     }
 
+    public void reverseArray(int[] array, int start, int end){
+        while(start<=end){
+            int temp = array[start];
+            array[start]=array[end];
+            array[end]=temp;
+            start++;
+            end--;
+        }
+
+    }
 
     public void rotateRightInPlace(int arr[], int k){
-        pu
+        reverseArray(arr, 0, arr.length-k-1);
+        reverseArray(arr,arr.length-k,arr.length-1);
+        reverseArray(arr,0, arr.length-1);
+        System.out.println(arr);
     }
 
     
