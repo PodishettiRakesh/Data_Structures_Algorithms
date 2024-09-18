@@ -159,8 +159,11 @@ public class ArraysEasy {
 
     public static void main(String[] args) {
         int[] arr={1,2,3,5};
+        int[] arr1={1,3,6};
+        int[] arr2={2,4,5,7};
         ArraysEasy obj= new ArraysEasy();
         System.out.println(obj.findMissing(arr));
+        obj.mergeTwoSorted(arr1, arr2);
 
     }
 }
