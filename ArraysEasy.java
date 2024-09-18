@@ -114,17 +114,19 @@ public class ArraysEasy {
 
     public int findMissing(int[] arr){
         int sum=0;
-        for(int i=1; i<=arr.length; i++){
+        for(int i=1; i<=arr.length+1; i++){
             sum+=i;
-            sum-=arr[i-1];
+            // System.out.println(sum);
+            if(i-1<arr.length){
+                sum-=arr[i-1];
+            }
         }
         return sum;
     }
     public static void main(String[] args) {
-        int[] arr={1,2,2,3,3,4,7,7};
+        int[] arr={1,2,3,5};
         ArraysEasy obj= new ArraysEasy();
-        obj.rotateRightInPlace(arr, 4);
-        obj.rotateLeft(arr, 4);
+        System.out.println(obj.findMissing(arr));
 
     }
 }
