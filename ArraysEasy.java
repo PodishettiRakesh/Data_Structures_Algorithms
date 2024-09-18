@@ -110,6 +110,16 @@ public class ArraysEasy {
         reverseArray(arr, 0, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
+
+
+    public int findMissing(int[] arr){
+        int sum=0;
+        for(int i=1; i<=arr.length; i++){
+            sum+=i;
+            sum-=arr[i-1];
+        }
+        return sum;
+    }
     public static void main(String[] args) {
         int[] arr={1,2,2,3,3,4,7,7};
         ArraysEasy obj= new ArraysEasy();
