@@ -157,6 +157,13 @@ public class ArraysEasy {
         System.out.println(Arrays.toString(newArray));
     }
 
+    public void sort012(int[] arr){
+        for(int nums:arr){
+            System.out.println(nums);
+        }
+    }
+
+
     public static void main(String[] args) {
         int[] arr={1,2,3,5};
         int[] arr1={1,3,6};
