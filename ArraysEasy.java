@@ -110,11 +110,79 @@ public class ArraysEasy {
         reverseArray(arr, 0, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
-    public static void main(String[] args) {
-        int[] arr={1,2,2,3,3,4,7,7};
-        ArraysEasy obj= new ArraysEasy();
-        obj.rotateRightInPlace(arr, 4);
-        obj.rotateLeft(arr, 4);
 
+
+    public int findMissing(int[] arr){
+        int sum=0;
+        for(int i=1; i<=arr.length+1; i++){
+            sum+=i;
+            // System.out.println(sum);
+            if(i-1<arr.length){
+                sum-=arr[i-1];
+            }
+        }
+        return sum;
+    }
+
+    public void mergeTwoSorted(int[] arr1, int[] arr2){
+        int[] newArray = new int[arr1.length+arr2.length];
+
+        int i=0;
+        int j=0;
+        int k=0;
+        
+        while(i<arr1.length && j<arr2.length){
+            if(arr1[i]<=arr2[j]){
+                newArray[k]=arr1[i];
+                i++;
+            }else{
+                newArray[k]=arr2[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i<arr1.length){
+            newArray[k]=arr1[i];
+            i++;
+            k++;
+        }
+
+        while(j<arr2.length){
+            newArray[k]=arr2[j];
+            j++;
+            k++;
+        }
+
+        System.out.println(Arrays.toString(newArray));
+    }
+
+    public void swap(int[] arr, int low, int high){
+        int temp=arr[low];
+        arr[low]=arr[high];
+        arr[high]=temp;
+    }
+    public void sort012(int[] arr){
+        int low=0, mid=0, high=arr.length-1;
+            while (mid<=high) {
+                if(arr[mid]==0){
+                    swap(arr, mid, low);
+                    mid++;
+                    low++;
+                }else if (arr[mid]==1){
+                    mid++;
+                }else{
+                    swap(arr, mid, high);
+                    high--;
+                }
+            }
+        
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void main(String[] args) {
+        int[] arr2={0,1,1,2,1,0,2,0,0};
+        ArraysEasy obj= new ArraysEasy();
+        obj.sort012(arr2);
     }
 }
