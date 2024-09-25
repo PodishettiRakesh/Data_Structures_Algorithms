@@ -36,28 +36,51 @@ public class BinarySearchTree {
         return root;
     }
 
-    public void inorder(){
-        inorderRec(root);
+    public void preorder(){
+        preorderRec(root);
+        System.out.println();
     }
 
-    public void inorderRec(Node root){
-        if(root==null){
-            System.out.print(root+" ");
-        }else{
+    public void preorderRec(Node root){
+        // if(root==null){
+        //     System.out.print(root+" ");
+        // }else{
+        if(root!=null){
             System.out.print(root.key+" ");
-            inorderRec(root.left);
-            inorderRec(root.right);
+            preorderRec(root.left);
+            preorderRec(root.right);
         }
     }
 
+    void inorder(){
+        inorderRec(root);
+        System.out.println();
+    }
+
+    public void inorderRec(Node root){
+        // if(root==null){
+        //     System.out.print(root+" ");
+        // }
+        if(root!=null){
+            inorderRec(root.left);
+            System.out.print(root.key+" ");
+            inorderRec(root.right);
+            
+        }
+    }
     public static void main(String[] args) {
         BinarySearchTree BSTtree=new BinarySearchTree();
         
         BSTtree.insertNode(5);
         BSTtree.insertNode(4);
         BSTtree.insertNode(8);
+        BSTtree.insertNode(2);
+        BSTtree.insertNode(9);
+        BSTtree.insertNode(10);
         // System.out.println(BSTtree.root.left);
 
         BSTtree.inorder();
+        BSTtree.preorder();
+        BSTtree.postorder();
     }
 }
