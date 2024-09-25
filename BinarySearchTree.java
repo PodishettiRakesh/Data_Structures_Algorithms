@@ -81,6 +81,21 @@ public class BinarySearchTree {
             System.out.print(root.key+" ");
         }
     }
+
+    boolean searchNode(int data){
+        return searchNodeAbs(root, data);
+    }
+
+    boolean searchNodeAbs(Node root, int data){
+        if(root==null || root.key==data){
+            return root!=null;
+        }
+        if(data>root.key){
+            return searchNodeAbs(root.right, data);
+        }
+        return searchNodeAbs(root.left, data);
+        
+    }
     public static void main(String[] args) {
         BinarySearchTree BSTtree=new BinarySearchTree();
         
@@ -95,5 +110,7 @@ public class BinarySearchTree {
         BSTtree.inorder();
         BSTtree.preorder();
         BSTtree.postorder();
+
+        System.out.println(BSTtree.searchNode(82));
     }
 }
