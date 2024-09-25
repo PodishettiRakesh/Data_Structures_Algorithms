@@ -68,6 +68,19 @@ public class BinarySearchTree {
             
         }
     }
+
+    void postorder(){
+        postorderAbs(root);
+        System.out.println();
+    }
+
+    void postorderAbs(Node root){
+        if(root!=null){
+            postorderAbs(root.left);
+            postorderAbs(root.right);
+            System.out.print(root.key+" ");
+        }
+    }
     public static void main(String[] args) {
         BinarySearchTree BSTtree=new BinarySearchTree();
         
