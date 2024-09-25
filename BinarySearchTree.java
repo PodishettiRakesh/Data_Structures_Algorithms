@@ -110,7 +110,5 @@ public class BinarySearchTree {
         BSTtree.inorder();
         BSTtree.preorder();
         BSTtree.postorder();
-
-        System.out.println(BSTtree.searchNode(82));
     }
 }
