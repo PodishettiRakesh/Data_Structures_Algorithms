@@ -180,11 +180,9 @@ public class ArraysEasy {
         System.out.println(Arrays.toString(arr));
     }
 
-
     public static void main(String[] args) {
-        int[] arr2={0,1,1,2,0,0};
+        int[] arr2={0,1,1,2,1,0,2,0,0};
         ArraysEasy obj= new ArraysEasy();
         obj.sort012(arr2);
-
     }
 }
