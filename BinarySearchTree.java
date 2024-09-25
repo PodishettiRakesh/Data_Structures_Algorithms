@@ -9,7 +9,11 @@ class Node{
     }
 }
 public class BinarySearchTree {
-    
+    Node root;
+
+    public BinarySearchTree(){
+        root=null;
+    }
     public static void main(String[] args) {
         
     }
