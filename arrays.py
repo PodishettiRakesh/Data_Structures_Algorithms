@@ -88,9 +88,21 @@ def find_union(arr1, arr2):
 arr1 = [1, 2, 3, 4, 5, 6,6,6, 7, 8, 9, 10]
 arr2 = [2, 3, 4, 4, 5, 11, 12]
 
-union = find_union(arr1, arr2)
+# union = find_union(arr1, arr2)
 
-print("Union of arr1 and arr2 is:")
-for num in union:
-    print(num, end=" ")
+# print("Union of arr1 and arr2 is:")
+# for num in union:
+#     print(num, end=" ")
 
+
+def findSubs(nums):
+    ans=0
+    sub_array=[]
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)+1):
+            print(nums[i:j], sum(nums[i:j]))
+            if sum(nums[i:j])>ans:
+                sub_array=nums[i:j]
+                ans=sum(nums[i:j])
+    print("the max ans: ", sub_array,ans)
+findSubs([1,2,3,4,5])
