@@ -96,13 +96,18 @@ arr2 = [2, 3, 4, 4, 5, 11, 12]
 
 
 def findSubs(nums):
-    ans=0
-    sub_array=[]
-    for i in range(len(nums)):
-        for j in range(i+1, len(nums)+1):
-            print(nums[i:j], sum(nums[i:j]))
-            if sum(nums[i:j])>ans:
-                sub_array=nums[i:j]
-                ans=sum(nums[i:j])
-    print("the max ans: ", sub_array,ans)
-findSubs([1,2,3,4,5])
+    maxSum=nums[0]
+    s=nums[0]
+    for i in range(1,len(nums)):
+        s+=nums[i]
+        maxSum=max(s,maxSum)
+        if(s<=0):
+            s=0
+            # print(nums[i:j], sum(nums[i:j]))
+            # if sum(nums[i:j])>ans:
+            #     sub_array=nums[i:j]
+            #     ans=sum(nums[i:j])
+
+    print(maxSum)
+findSubs([5,4,-1,7,8])
+# findSubs([-2,1,-3,4,-1,2,1,-5,4])
