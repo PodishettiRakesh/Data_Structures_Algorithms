@@ -1,4 +1,8 @@
-
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Queue;
+// import java.util.*;
+import java.util.LinkedList;
 public class BinarySearchTree {
     class Node{
         int key;
@@ -96,6 +100,38 @@ public class BinarySearchTree {
         return searchNodeAbs(root.left, data);
         
     }
+
+    List<List<Integer>> levelOrder(){
+        return levelOrderAbs(root);
+    }
+
+    List<List<Integer>> levelOrderAbs(Node root){
+        List<List<Integer>> ans=new ArrayList<>();
+        if(root==null){
+            return ans;
+        }
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while(!q.isEmpty()){
+            int size=q.size();
+
+            List<Integer> level = new ArrayList<>();
+
+            for(int i=0; i<size; i++){
+                Node node= q.poll();
+                level.add(node.key);
+
+                if(node.left!=null){
+                    q.add(node.left);
+                }
+            }
+        }
+        
+
+        
+    }
     public static void main(String[] args) {
         BinarySearchTree BSTtree=new BinarySearchTree();
         
@@ -107,8 +143,10 @@ public class BinarySearchTree {
         BSTtree.insertNode(10);
         // System.out.println(BSTtree.root.left);
 
-        BSTtree.inorder();
-        BSTtree.preorder();
-        BSTtree.postorder();
+        // BSTtree.inorder();
+        // BSTtree.preorder();
+        // BSTtree.postorder();
+
+        BSTtree.levelOrder();
     }
 }
