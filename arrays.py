@@ -111,3 +111,29 @@ def findSubs(nums):
     print(maxSum)
 findSubs([5,4,-1,7,8])
 # findSubs([-2,1,-3,4,-1,2,1,-5,4])
+
+def mergeSortedArrays(a,b):
+    i=0
+    j=0
+    m=len(a)
+    n=len(b)
+    res=[]
+    while i<m and j<n:
+        if a[i]<= b[j]:
+            res.append(a[i])
+            i+=1
+        else:
+            res.append(b[j])
+            j+=1
+
+    while i<m:
+        res.append(a[i])
+        i+=1
+    
+    while j<n:
+        res.append(b[j])
+        j+=1
+
+    return res
+
+print(mergeSortedArrays([1,3,4,6,10,19],[1,2,13,8]))
