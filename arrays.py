@@ -97,20 +97,27 @@ arr2 = [2, 3, 4, 4, 5, 11, 12]
 
 def findSubs(nums):
     maxSum=nums[0]
-    s=nums[0]
-    for i in range(1,len(nums)):
+    s=0
+    start=0
+    end=0
+    temp_s=0
+    for i in range(0,len(nums)):
         s+=nums[i]
-        maxSum=max(s,maxSum)
+        if s>maxSum:
+            maxSum=max(s,maxSum)
+            start=temp_s
+            end=i
+
         if(s<=0):
             s=0
-            # print(nums[i:j], sum(nums[i:j]))
-            # if sum(nums[i:j])>ans:
-            #     sub_array=nums[i:j]
-            #     ans=sum(nums[i:j])
+            temp_s+1
+    
 
-    print(maxSum)
-findSubs([5,4,-1,7,8])
-# findSubs([-2,1,-3,4,-1,2,1,-5,4])
+    print(maxSum, nums[start:end+1])
+
+
+findSubs([5,9,4,-1,-7,-8])
+findSubs([-2,-9,1,-3,4,-1,2,1,-5,4])
 
 def mergeSortedArrays(a,b):
     i=0
@@ -136,4 +143,18 @@ def mergeSortedArrays(a,b):
 
     return res
 
-print(mergeSortedArrays([1,3,4,6,10,19],[1,2,13,8]))
+# print(mergeSortedArrays([1,2,33,88],[1,3,4,6,10,19])) Inplace
+#find duplicate using  
+
+
+# def mergeSortedInplace(a,b):
+
+def findDuplicate(nums):
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+
+                if nums[i]==nums[j]:
+                    print(i,j,nums[i], nums[j])
+                    return nums[i]
+# print(findDuplicate([1,3,4,2,2]))
+
