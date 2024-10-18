@@ -88,9 +88,90 @@ def find_union(arr1, arr2):
 arr1 = [1, 2, 3, 4, 5, 6,6,6, 7, 8, 9, 10]
 arr2 = [2, 3, 4, 4, 5, 11, 12]
 
-union = find_union(arr1, arr2)
+# union = find_union(arr1, arr2)
 
-print("Union of arr1 and arr2 is:")
-for num in union:
-    print(num, end=" ")
+# print("Union of arr1 and arr2 is:")
+# for num in union:
+#     print(num, end=" ")
 
+
+def findSubs(nums):
+    maxSum=nums[0]
+    s=0
+    start=0
+    end=0
+    temp_s=0
+    for i in range(len(nums)):
+        s+=nums[i]
+        if s>maxSum:
+            maxSum=max(s,maxSum)
+            start=temp_s
+            end=i
+
+        if s<=0:
+            s=0
+            temp_s=i+1
+    
+
+    print(maxSum, nums[start:end+1])
+
+
+# findSubs([5,9,4,-1,-7,-8])
+# findSubs([-2,1,-3,4,-1,2,1,-5,4])
+
+def mergeSortedArrays(a,b):
+    i=0
+    j=0
+    m=len(a)
+    n=len(b)
+    res=[]
+    while i<m and j<n:
+        if a[i]<= b[j]:
+            res.append(a[i])
+            i+=1
+        else:
+            res.append(b[j])
+            j+=1
+
+    while i<m:
+        res.append(a[i])
+        i+=1
+    
+    while j<n:
+        res.append(b[j])
+        j+=1
+
+    return res
+
+# print(mergeSortedArrays([1,2,33,88],[1,3,4,6,10,19])) Inplace
+#find duplicate using  
+
+
+# def mergeSortedInplace(a,b):
+
+def findDuplicate(nums):
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+
+                if nums[i]==nums[j]:
+                    print(i,j,nums[i], nums[j])
+                    return nums[i]
+# print(findDuplicate([1,3,4,2,2]))
+
+def countOfSubs(nums,k):
+    currentSum=0
+    dicts={0:1}
+    count=0
+    for i in range(len(nums)):
+        currentSum+=nums[i]
+
+        if currentSum-k in dicts:
+            count+=dicts[currentSum-k]
+        
+        if currentSum not in dicts:
+            dicts[currentSum]=1
+        else:
+            dicts[currentSum]+=1
+    return count
+
+print(countOfSubs([1,2,3],3))
