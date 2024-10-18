@@ -160,7 +160,7 @@ def findDuplicate(nums):
 
 def countOfSubs(nums,k):
     currentSum=0
-    dicts={}
+    dicts={0:1}
     count=0
     for i in range(len(nums)):
         currentSum+=nums[i]
