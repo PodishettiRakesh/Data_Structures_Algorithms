@@ -159,10 +159,19 @@ def findDuplicate(nums):
 # print(findDuplicate([1,3,4,2,2]))
 
 def countOfSubs(nums,k):
-    c=0
+    currentSum=0
+    dicts={}
+    count=0
     for i in range(len(nums)):
-        for j in range(i+1,len(nums)+1):
-            if sum(nums[i:j])==k:
-                c+=1
-    return c
-print(countOfSubs([1,5,1,1,1,5,1,1],2))
+        currentSum+=nums[i]
+
+        if currentSum-k in dicts:
+            count+=dicts[currentSum-k]
+        
+        if currentSum not in dicts:
+            dicts[currentSum]=1
+        else:
+            dicts[currentSum]+=1
+    return count
+
+print(countOfSubs([1,2,3],3))
