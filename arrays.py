@@ -101,23 +101,23 @@ def findSubs(nums):
     start=0
     end=0
     temp_s=0
-    for i in range(0,len(nums)):
+    for i in range(len(nums)):
         s+=nums[i]
         if s>maxSum:
             maxSum=max(s,maxSum)
             start=temp_s
             end=i
 
-        if(s<=0):
+        if s<=0:
             s=0
-            temp_s+1
+            temp_s=i+1
     
 
     print(maxSum, nums[start:end+1])
 
 
-findSubs([5,9,4,-1,-7,-8])
-findSubs([-2,-9,1,-3,4,-1,2,1,-5,4])
+# findSubs([5,9,4,-1,-7,-8])
+# findSubs([-2,1,-3,4,-1,2,1,-5,4])
 
 def mergeSortedArrays(a,b):
     i=0
@@ -158,3 +158,11 @@ def findDuplicate(nums):
                     return nums[i]
 # print(findDuplicate([1,3,4,2,2]))
 
+def countOfSubs(nums,k):
+    c=0
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)+1):
+            if sum(nums[i:j])==k:
+                c+=1
+    return c
+print(countOfSubs([1,5,1,1,1,5,1,1],2))
