@@ -174,4 +174,4 @@ def countOfSubs(nums,k):
             dicts[currentSum]+=1
     return count
 
-print(countOfSubs([1,2,3],3))
+# print(countOfSubs([1,2,3],3))
